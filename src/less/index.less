@@ -1,24 +1,39 @@
 
-.navbar-inverse {
-    .navbar-nav > li > a {
-        color: #eae8e8;
-        font-size: 20px;
-    }
-    .navbar-brand {
-        font-size: 20px;
-        color: #eae8e8;
-    }
-
-}
- .navbar{
-    margin: 0px;
-}
-.navbar-default .navbar-nav > li > a {
-    color: rgb(97, 96, 96);
-    font-size: 18px;
-    line-height: 36px
-}
+@import url('header.less');
 .row .col-sm-4{
     background: url('../../image/feature01.png') no-repeat left center;
     padding-left: 80px ;
 }
+
+.panel-default {
+    margin-top: 20px;
+    border: none;
+    div.pull-left{
+        background: transparent;
+        border-bottom:4px solid#2e8ece;
+        color:  #2e8ece ;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    div.pull-right{
+        background: transparent;
+        border: none;
+        margin-top: 9px;
+        font-size: 18px;
+    }
+    .table{
+        border-top: 2px solid #ddd;
+        margin-top: -2px;
+        tr td{
+            vertical-align: middle;
+        }
+    }
+} 
+.row .col-md-6 .panel-default table tr {
+    td:last-child{
+    text-align: right;
+}
+
+}
+
+@import url('footer.less');
