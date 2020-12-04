@@ -138,8 +138,6 @@
               $('#daojishi').html(i)
             }
           }, 1000);
-         
-
         } else {
           alert(data.massage);
         }

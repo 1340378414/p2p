@@ -18,17 +18,27 @@
 
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">首页</a></li>
-                    <li><a href="#">小强</a></li>
-                    <li><a href="#">赶快充值</a></li>
-                    <li><a href="login.php">登录</a></li>
-                    <li><a href="register.php">注册</a></li>
-                    <li><a href="#">注销</a></li>
+                    <li id='homepage'><a  href="index.php">首页</a></li>
                     <li><a href="#">帮助</a></li>
-
                     <li><a href="#" data-toggle="tooltip" data-placement="bottom"
                             title='<img src="./image/wx.jpg" width="100px">' data-html='true'>联系客服</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+    <script src='./lib/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/jquery.min.js'></script>
+    <script>
+        $.get('./api/loginStatu.php',function(data){
+            if(data.isLogin){
+                var add= `<li><a href="#">${data.username}</a></li>
+                    <li><a href="#">赶快充值</a></li>
+                    <li><a href="./api/logout.php">注销</a></li>`
+                    
+                $('#homepage').after(add);
+            }else{
+                var add=` <li><a href="login.php">登录</a></li><li><a href="register.php">注册</a></li>`
+                    $('#homepage').after(add);
+                    console.log(add);
+            };
+        },'json')
+    </script>   

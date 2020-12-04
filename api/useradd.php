@@ -15,7 +15,7 @@ if ($res) {
     $result=["isSuccess"=>false,"massage"=>"注册失败"];
     echo json_encode($result);
 };
-mysqli_free_result($res);
+
 mysqli_close($link);
 
 ?>

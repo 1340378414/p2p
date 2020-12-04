@@ -8,6 +8,9 @@ $res=mysqli_query($link,$sql);
 $rs=mysqli_fetch_assoc($res); 
 if ($rs) {
     $result=["isSuccess"=>true,"massage"=>"登陆成功"];
+    session_start();
+    $_SESSION['username']=$username;
+    $_SESSION['id']=$rs['id'];
     echo json_encode($result);
 } else {
     $result=["isSuccess"=>false,"massage"=>"登录失败"];
